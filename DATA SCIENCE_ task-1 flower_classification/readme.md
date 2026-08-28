@@ -134,18 +134,6 @@ print(classification_report(y_test, y_pred))
 * **Seaborn**
 * **Scikit-learn**
 
----
-
-## 📂 Project Structure
-
-```text
-Iris-Dataset/
-│
-├── Iris_Classification.ipynb
-├── README.md
-└── dataset/
-    └── iris.csv
-```
 
 ---
 
