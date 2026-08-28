@@ -1,91 +1,252 @@
-# Iris Dataset Analysis
+# 🌸 Iris Flower Classification using Machine Learning
 
-## 1. Import Modules
+## 📌 Project Overview
 
-The required Python libraries are imported for data analysis and visualization.
+This project focuses on **classifying Iris flowers into different species using Machine Learning**.
 
-```python
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-```
+The Iris dataset contains measurements of iris flowers, and the objective is to build a machine learning model that can predict the species of an iris flower based on its features.
 
-## 2. Exploratory Data Analysis
+The project includes **Exploratory Data Analysis (EDA), data preprocessing, model training, prediction, and model evaluation**.
 
-Exploratory Data Analysis (EDA) is performed to understand the dataset, its structure, features, and basic statistics.
+---
 
-The following steps are performed:
+## 🎯 Objective
 
-* Load the Iris dataset
-* Display the first few rows
-* Check the shape of the dataset
-* Check data types
-* Check for missing values
-* Generate descriptive statistics
+The main objective of this project is to:
 
-Example:
+* Understand the Iris dataset
+* Perform Exploratory Data Analysis (EDA)
+* Analyze relationships between different features
+* Prepare the dataset for machine learning
+* Train a classification model
+* Make predictions on unseen data
+* Evaluate the performance of the model
 
-```python
-iris.head()
-iris.shape
-iris.info()
-iris.isnull().sum()
-iris.describe()
-```
+---
 
-## 3. Visualisations
+## 📊 Dataset
 
-Visualizations are created to understand the relationships and distributions of the Iris flower features.
+The **Iris dataset** contains **150 observations** of iris flowers belonging to three different species.
 
-### Pairplot
-
-A pairplot is used to show relationships between the numerical features and distinguish the different Iris species.
-
-```python
-sns.pairplot(iris, hue="species")
-plt.suptitle("Pairplot of Iris Features by Species", y=1.02)
-plt.show()
-```
-
-### Box Plots
-
-Box plots are used to compare the distribution of each feature across different Iris species.
-
-```python
-features = ['sepal_length', 'sepal_width',
-            'petal_length', 'petal_width']
-
-for feature in features:
-    plt.figure(figsize=(7, 5))
-    sns.boxplot(data=iris, x='species', y=feature)
-    plt.title(f'{feature.title()} Distribution by Species')
-    plt.show()
-```
-
-## 4. Training Dataset
-
-The Iris dataset is used as the training dataset for analysis and machine learning.
-
-The dataset contains four input features:
-
-* Sepal Length
-* Sepal Width
-* Petal Length
-* Petal Width
-
-The target variable is:
-
-* Species
-
-The dataset contains three species:
+### Species
 
 * Iris Setosa
 * Iris Versicolor
 * Iris Virginica
 
-## Conclusion
+### Features
 
-The Iris dataset was explored using Exploratory Data Analysis and visualizations. Pairplots and box plots help identify relationships, distributions, and differences between the three Iris species.
-=======
-# OIBSIP
->>>>>>> 765e1457c54c011dc7a50925a0e51d19c1effbd1
+| Feature      | Description         |
+| ------------ | ------------------- |
+| Sepal Length | Length of the sepal |
+| Sepal Width  | Width of the sepal  |
+| Petal Length | Length of the petal |
+| Petal Width  | Width of the petal  |
+| Species      | Target variable     |
+
+The dataset contains:
+
+* **150 rows**
+* **4 input features**
+* **1 target variable**
+* **3 flower classes**
+
+---
+
+## 🔍 Exploratory Data Analysis
+
+The following EDA techniques were performed:
+
+* Checking dataset shape
+* Checking data types
+* Checking for missing/null values
+* Generating descriptive statistics
+* Examining class distribution
+* Analyzing relationships between features
+* Visualizing the dataset
+
+Example checks:
+
+```python
+df.shape
+df.dtypes
+df.isnull().sum()
+df.describe()
+```
+
+---
+
+## 🤖 Machine Learning Model
+
+### Logistic Regression
+
+**Logistic Regression** was used as a classification algorithm to predict the species of Iris flowers.
+
+The dataset was divided into:
+
+* Training data
+* Testing data
+
+The model was trained using the training dataset and evaluated using the testing dataset.
+
+---
+
+## 📈 Model Evaluation
+
+The model was evaluated using the following metrics:
+
+### 1. Accuracy
+
+Accuracy measures the percentage of predictions that were correctly classified.
+
+### 2. Confusion Matrix
+
+The confusion matrix shows the number of correct and incorrect predictions for each Iris species.
+
+### 3. Classification Report
+
+The classification report provides:
+
+* Precision
+* Recall
+* F1-score
+* Support
+
+Example:
+
+```python
+from sklearn.metrics import confusion_matrix, classification_report
+
+confusion_matrix(y_test, y_pred)
+
+print(classification_report(y_test, y_pred))
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **Jupyter Notebook**
+* **NumPy**
+* **Pandas**
+* **Matplotlib**
+* **Seaborn**
+* **Scikit-learn**
+
+---
+
+## 📂 Project Structure
+
+```text
+Iris-Dataset/
+│
+├── Iris_Classification.ipynb
+├── README.md
+└── dataset/
+    └── iris.csv
+```
+
+---
+
+## ▶️ How to Run the Project
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/Santoshparagond81/OIBSIP.git
+```
+
+### Step 2: Navigate to the project folder
+
+```bash
+cd OIBSIP
+```
+
+Then navigate to the Iris project folder:
+
+```bash
+cd Iris-Dataset
+```
+
+### Step 3: Install required libraries
+
+```bash
+pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+```
+
+### Step 4: Open Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+```text
+Iris_Classification.ipynb
+```
+
+Run the cells sequentially to reproduce the analysis and results.
+
+---
+
+## 📌 Results
+
+The Logistic Regression model was trained successfully to classify the three Iris flower species.
+
+The performance of the model was evaluated using:
+
+* Accuracy
+* Confusion Matrix
+* Precision
+* Recall
+* F1-score
+
+The evaluation results demonstrate the effectiveness of Logistic Regression for the Iris flower classification problem.
+
+---
+
+## 💡 Key Learnings
+
+Through this project, I learned:
+
+* How to load and inspect a dataset
+* How to perform EDA
+* How to identify missing values
+* How to analyze statistical information
+* How to split data into training and testing sets
+* How to train a Logistic Regression model
+* How to make predictions
+* How to evaluate a classification model
+* How to interpret a confusion matrix
+* How to understand precision, recall, and F1-score
+
+---
+
+## 🚀 Future Improvements
+
+The project can be further improved by:
+
+* Comparing multiple classification algorithms
+* Performing hyperparameter tuning
+* Using cross-validation
+* Creating an interactive prediction interface
+* Deploying the model as a web application
+
+---
+
+## 👨‍💻 Author
+
+**Santosh Paragond**
+
+GitHub:
+https://github.com/Santoshparagond81
+
+---
+
+## ⭐ Acknowledgement
+
+This project was completed as part of my learning and practical experience in **Machine Learning and Data Science**.
+
+If you found this project useful, consider giving the repository a ⭐.
